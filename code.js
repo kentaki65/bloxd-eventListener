@@ -326,7 +326,7 @@ const register = {
 };
 
 Object.entries(register).forEach(([name, callback]) => {
-  if(exclusion.has(name)){
+  if(!exclusion.has(name)){
     globalThis[name] = function() {
       return callback(...arguments);
     };
